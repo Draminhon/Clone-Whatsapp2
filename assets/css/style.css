@@ -6,6 +6,9 @@
     font-family: 'Roboto', sans-serif;
 }
 
+
+
+
 .roboto-thin {
     font-family: "Roboto", sans-serif;
     font-weight: 100;
@@ -78,6 +81,21 @@
     font-style: italic;
   }
   
+  ::-webkit-scrollbar{
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track{
+    background: none;
+  }
+::-webkit-scrollbar-thumb{
+    background: #b9b3ae;
+  }
+  
+::-webkit-scrollbar-thumb:hover{
+  background: #888;
+}
+
   .avatar{
     position: relative;
     width: 40px;
@@ -147,9 +165,10 @@ body{
 .chat-avatar{
     position: relative;
     height: 50px;
-    width: 50px;
+    min-width: 50px;
     border-radius: 50%;
     overflow: hidden;
+    flex: 1;
 }
 
 .sidebar-search-container img{
@@ -172,6 +191,45 @@ body{
     width: 100%;
 }
 
+.sidebar-chat:hover{
+  background-color: #f5f5f5;
+}
+
+.sidebar-chat:nth-child(2){
+  background-color: #ebebeb;
+}
+
+.sidebar-chat::before{
+  content: '';
+  position: absolute;
+  width: 80%;
+  bottom: 0;
+  left: 80px;
+  border-bottom: 1px solid #999;
+}
+
+.chat-info{
+  margin-left: 15px;
+  flex: 10;
+}
+
+.chat-info p{
+  font-size: 13px;
+  line-height: 20px;
+  color: gray;
+}
+
+.time{
+  flex: 1;
+
+}
+
+.time p{
+  white-space: nowrap;
+  font-size: 13px;
+  margin-top: -16px;
+  color: gray;
+}
 /* Message Content */
 
 .message-container{
@@ -195,4 +253,61 @@ h4{
 .message-header-content p{
     font-size: 13px;
     color: gray;
+}
+
+.message-content{
+  background-image: url(background.jpg);
+  background-position: center;
+  height: calc(100vh - 120px);
+  padding: 20px 80px;
+  overflow-y: scroll;
+
+}
+
+.chat-message{
+  font-size: 14px;
+  padding: 8px 10px;
+  width: fit-content;
+  border-radius: 8px;
+  background-color: white;
+  margin-bottom: 30px;
+}
+
+.chat-sent{
+  margin-left: auto;
+  background-color: #dcf8c6;
+}
+
+.chat-timestamp{
+  margin-left: 10px;
+  font-size: 10px;
+  color: grey;
+}
+
+/* message footer */
+
+.message-footer{
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  background-color: #f0f0f0;
+}
+
+
+
+.message-footer img{
+  flex: 1;
+  width: 22px;
+  height: 22px;
+  opacity: 0.4;
+}
+
+.message-footer input{
+  flex: 20;
+  margin: 5px 10px;
+  padding: 12px 15px;
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  font-size: 15px;
 }
